@@ -1,4 +1,14 @@
 # Starter pipeline
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'serviceEndpoint'
+    rootDirectory: 
+    filePatterns: '**'
+    remoteDirectory: '/upload/$(Build.BuildId)/'
+    clean: false
+    cleanContents: false
+    preservePaths: false
+    trustSSL: false
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
